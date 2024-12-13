@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note List</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="page note-page">
+        <div class="content">
+            <h1>Note List</h1>
+            <div class="button-container">
+                <a href="{% url 'notes:create' %}" class="button create-button">Create Note</a>
+                {% for notes in note %}
+                     <a href="{% url 'notes:detail' pk=note.pk %}"><h3>{{ note.note_title }} </h3></a>
+                {% empty %}
+                     <h3>No notes</h3>
+                {% endfor %}
+                <a href="{% url 'home' %}" class="button back-button">Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+

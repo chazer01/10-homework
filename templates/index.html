@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Home Page</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="home-page">
+        <div class="content">
+            <h1>Welcome to the Home Page</h1>
+            <div class="button-container">
+                <a href="{% url 'notes:list' %}" class="nav-button">Go to Notes List</a>
+                <a href="{% url 'home' %}" class="nav-button">Go to Task List</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
